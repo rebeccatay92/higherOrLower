@@ -26,3 +26,9 @@ h2:active {
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
 }
+
+.textbox {
+  height: 50px;
+  width: 80px;
+  font-size: 50px;
+}

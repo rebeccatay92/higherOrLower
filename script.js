@@ -2,6 +2,7 @@
 // or if the number guess is correct, we change the body color
 
 var randomNumber = randomFn(0, 10)
+var form = document.getElementById('form');
 
 // fn that generates randomNum
 // min and max always whole number
@@ -18,10 +19,18 @@ function updateH1(newH1) {
   h1.textContent = newH1
 }
 
+//using the guess button
 document.querySelector('h2').addEventListener('click', function () {
-  var guessedNum = prompt('Type a number')
-  askForANumber(guessedNum, 5)
+  var number = document.getElementById("number").value;
+  askForANumber(number, 5)
 })
+
+
+//using the enter in the form. this changes html but doesnt stay
+form.onsubmit = function () {
+  var number = document.getElementById('number').value;
+  askForANumber(number, 5)
+}
 
 // fn that checks numbers with the random number
 function askForANumber (guessedNum, randomNumber) {
