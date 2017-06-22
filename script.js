@@ -1,7 +1,4 @@
-// update the h1 to say higher or lower
-// or if the number guess is correct, we change the body color
-
-var randomNumber = randomFn(0, 10)
+var randomNumber = randomFn(0,10);
 var form = document.getElementById('form');
 
 // fn that generates randomNum
@@ -17,6 +14,20 @@ function updateH1(newH1) {
   // var h1 = document.getElementsByTagName('h1')
   // updated the property of h1 dom node
   h1.textContent = newH1
+}
+
+document.querySelector('h4').addEventListener('click', function () {
+  document.querySelector('h4').style.display = 'none';
+  startNewGame();
+})
+    
+function startNewGameButton(){
+  document.querySelector('h4').style.display = 'block';
+}
+
+function startNewGame(){
+  randomNumber = randomFn(0,10);
+  document.querySelector('h1').textContent = 'Higher Or Lower Game!';
 }
 
 //using the guess button
@@ -35,13 +46,14 @@ form.onsubmit = function () {
 // fn that checks numbers with the random number
 function askForANumber (guessedNum, randomNumber) {
   if (guessedNum > randomNumber) {
-    updateH1('lower, randomNumber is ' + randomNumber)
+    updateH1('lower')
     document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if (guessedNum < randomNumber) {
-    updateH1('higher, randomNumber is ' + randomNumber)
+    updateH1('higher')
     document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if(guessedNum == randomNumber) {
     updateH1('correct')
     document.querySelector('body').style.backgroundColor = 'green'
+    startNewGameButton();
   }
 }
