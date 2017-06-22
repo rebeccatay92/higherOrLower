@@ -1,4 +1,5 @@
 var randomNumber = randomFn(0,10);
+var form = document.getElementById('form');
 
 // fn that generates randomNum
 // min and max always whole number
@@ -14,6 +15,12 @@ function updateH1(newH1) {
   // updated the property of h1 dom node
   h1.textContent = newH1
 }
+
+document.querySelector('h4').addEventListener('click', function () {
+  document.querySelector('h4').style.display = 'none';
+  startNewGame();
+})
+    
 function startNewGameButton(){
   document.querySelector('h4').style.display = 'block';
 }
@@ -23,24 +30,30 @@ function startNewGame(){
   document.querySelector('h1').textContent = 'Higher Or Lower Game!';
 }
 
-document.querySelector('h4').addEventListener('click', function () {
-  document.querySelector('h4').style.display = 'none';
-  startNewGame();
+//using the guess button
+document.querySelector('h2').addEventListener('click', function () {
+  var number = document.getElementById("number").value;
+  askForANumber(number, 5)
 })
 
-document.querySelector('h2').addEventListener('click', function () {
-  var guessedNum = prompt('Type a number')
-  askForANumber(guessedNum, randomNumber)
-})
+
+//using the enter in the form. this changes html but doesnt stay
+form.onsubmit = function () {
+  var number = document.getElementById('number').value;
+  askForANumber(number, 5)
+}
 
 // fn that checks numbers with the random number
 function askForANumber (guessedNum, randomNumber) {
   if (guessedNum > randomNumber) {
     updateH1('lower')
+    document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if (guessedNum < randomNumber) {
     updateH1('higher')
+    document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if(guessedNum == randomNumber) {
     updateH1('correct')
+    document.querySelector('body').style.backgroundColor = 'green'
     startNewGameButton();
   }
 }

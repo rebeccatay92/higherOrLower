@@ -4,17 +4,23 @@
     <meta charset="utf-8">
     <title>My First HTML</title>
     <!--PUT CSS AT THE TOP-->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="container">
     <h1>Higher Or Lower Game!</h1>
     <div class = guessButton>
       <h2>GUESS</h2>
     </div>
+      <form id="form">
+        <input id="number" type="number" min="1" max="10" name="number" style="font-size:18pt;height:40px;width:50px;">
+      </form>
+      <p>Guess a secret number between 0 to 10.</p>
     <div class="">
       <h4>Play again?</h4>
     </div>
+    </div>
   <!--JS BEFORE THE BODY TAG-->
-  <script src="/js/script.js" charset="utf-8"></script>
+  <script src="script.js" charset="utf-8"></script>
 </body>
 </html>
