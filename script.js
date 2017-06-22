@@ -20,7 +20,7 @@ document.querySelector('h4').addEventListener('click', function () {
   document.querySelector('h4').style.display = 'none';
   startNewGame();
 })
-    
+
 function startNewGameButton(){
   document.querySelector('h4').style.display = 'block';
 }
@@ -33,26 +33,26 @@ function startNewGame(){
 //using the guess button
 document.querySelector('h2').addEventListener('click', function () {
   var number = document.getElementById("number").value;
-  askForANumber(number, 5)
+  askForANumber(number, randomNumber)
 })
 
 
 //using the enter in the form. this changes html but doesnt stay
 form.onsubmit = function () {
   var number = document.getElementById('number').value;
-  askForANumber(number, 5)
+  askForANumber(number, randomNumber)
 }
 
 // fn that checks numbers with the random number
 function askForANumber (guessedNum, randomNumber) {
   if (guessedNum > randomNumber) {
-    updateH1('lower')
+    updateH1('Go lower')
     document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if (guessedNum < randomNumber) {
-    updateH1('higher')
+    updateH1('Go higher')
     document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if(guessedNum == randomNumber) {
-    updateH1('correct')
+    updateH1('Correct')
     document.querySelector('body').style.backgroundColor = 'green'
     startNewGameButton();
   }
