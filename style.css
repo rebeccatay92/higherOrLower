@@ -27,12 +27,6 @@ h2:active {
 	transform: translateY(4px);
 }
 
-.textbox {
-  height: 100px;
-  width: 100px
-  font-size: 50px;
-}
-
 h4{
   display: none;
   text-align: center;
