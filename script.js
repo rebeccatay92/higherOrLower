@@ -55,3 +55,23 @@ function askForANumber (guessedNum, randomNumber) {
     startNewGameButton()
   }
 }
+
+document.querySelector('button').addEventListener('click', function() {
+  var red = randomizer()
+  var green = randomizer()
+  var blue = randomizer()
+  var red2 = randomizer()
+  var green2 = randomizer()
+  var blue2 = randomizer()
+  var rgbStr = "linear-gradient( -90deg, rgb(" + red + "," + green + "," + blue + "),rgb(" + red2 + "," + green2 + "," + blue2 + ") )"
+  document.querySelector('body').style.background = rgbStr
+})
+
+var randomizer = function() {
+  return (Math.floor(Math.random() * 256))
+}
+
+
+
+
+//click button, changes background color randomly
