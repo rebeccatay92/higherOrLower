@@ -28,6 +28,7 @@ function startNewGameButton () {
 function startNewGame () {
   randomNumber = randomFn(0, 10)
   document.querySelector('h1').textContent = 'Higher Or Lower Game!'
+  document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
 }
 
 // using the guess button
@@ -46,10 +47,8 @@ form.onsubmit = function () {
 function askForANumber (guessedNum, randomNumber) {
   if (guessedNum > randomNumber) {
     updateH1('Go lower')
-    document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if (guessedNum < randomNumber) {
     updateH1('Go higher')
-    document.querySelector('body').style.backgroundColor = 'rgb(119, 230, 233)'
   } else if (guessedNum == randomNumber) {
     updateH1('Correct')
     document.querySelector('body').style.backgroundColor = 'green'
